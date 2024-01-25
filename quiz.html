@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Quiz Me!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./assets/bootstrap.min.css">
+  <link rel="icon" href="./assets/icon.png">
+  <style>
+    body {
+      font-family: serif;
+    }
+
+    .dropdown-item {
+      font-family: serif;
+    }
+
+    nav {
+      font-family: elephant, serif;
+    }
+
+    .navbar-brand {
+      color: #c80000;
+    }
+
+    .page {
+      display: none;
+    }
+
+    .active-page {
+      display: block;
+    }
+
+    h1,h2,h3,h4,h5,h6 {
+      color:#c80000;
+      font-family: elephant, serif;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modal-label" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modal-label"></h5>
+        </div>
+        <div class="modal-body"><p id="modal-text"></p></div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#" onclick="aboutModal()">Quiz Me!</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
+        aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+              aria-haspopup="true" aria-expanded="false">My quiz</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item active" id="edit-link" href="#" onclick="switchPage(this)">Edit</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item">New</a>
+              <a class="dropdown-item">Open</a>
+              <a class="dropdown-item">Save</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="flashcards-link" href="#" onclick="switchPage(this)">Flashcards</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="test-link" href="#" onclick="switchPage(this)">Test</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="match-link" href="#" onclick="switchPage(this)">Match</a>
+          </li>
+      </div>
+    </div>
+  </nav>
+  <div class="container mt-3">
+    <div id="edit-page" class="active-page page">
+      <h1>Welcome to Quiz Me!</h1>
+      <p>Edit your terms below.</p>
+    </div>
+    <div id="flashcards-page" class="page" aria-hidden>
+      <h1>Flashcards</h1>
+    </div>
+    <div id="test-page" class="page" aria-hidden>
+      <h1>Test</h1>
+    </div>
+    <div id="match-page" class="page" aria-hidden>
+      <h1>Match</h1>
+    </div>
+  </div>
+</body>
+<script src="./assets/bootstrap.bundle.min.js"></script>
+<script src="./assets/script.js"></script>
+
+</html>
